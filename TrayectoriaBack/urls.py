@@ -23,7 +23,8 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
-
+from django.config import settings
+from django.config.urls.static import static
 
 # Serializers define the API representation.
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -61,4 +62,4 @@ urlpatterns = [
     re_path(r'^', include(router.urls)),
     re_path(r'^api/v1/login/', include('Login.urls')),
     re_path(r'^api/v1/profile/', include('Profile.urls')),
-]
+] +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
