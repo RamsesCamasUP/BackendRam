@@ -62,4 +62,5 @@ urlpatterns = [
     re_path(r'^', include(router.urls)),
     re_path(r'^api/v1/login/', include('Login.urls')),
     re_path(r'^api/v1/profile/', include('Profile.urls')),
+    re_path(r'^api/v1/', include('Dashboard.urls')),
 ] +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
