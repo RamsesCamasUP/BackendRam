@@ -15,4 +15,9 @@ class ProfileModelView(APIView):
             serializer.save()
             return Response(serializer.data)
         return Response('Error')
+    def get(self,request):
+        profile = ProfileModel.objects.all()
+        profile_json = ProfileModelSerializers(profile,many=True)
+        return Response(profile_json.data)
+    
 # Create your views here.

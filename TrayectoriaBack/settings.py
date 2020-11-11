@@ -43,12 +43,20 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_auth',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
+    'allauth.socialaccount',
 
     'Dashboard',
     'Profile',
 ]
 
 SITE_ID = 1
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES':('rest_framework.permissions.IsAuthenticated',),
@@ -119,7 +127,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'Machiniram117.',
         'HOST': '127.0.0.1',
-        'PORT': '5432'
+        'PORT': '5432'  
     }
 }"""
 
