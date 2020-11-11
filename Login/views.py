@@ -3,7 +3,8 @@ from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 from django.contrib.auth.models import User
 from rest_framework import generics, permissions
-
+from rest_framework import viewsets
+from .serializers import UserSerializer 
 
 class CustomAuthToken(ObtainAuthToken):
 
@@ -19,3 +20,6 @@ class CustomAuthToken(ObtainAuthToken):
             'user_id': user.pk,
             'email': user.email
         })
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer

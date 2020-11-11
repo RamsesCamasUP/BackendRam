@@ -5,5 +5,6 @@ from rest_framework import routers, serializers, viewsets
 from Login.views import CustomAuthToken
 
 urlpatterns = [
+
     re_path(r'^', CustomAuthToken.as_view()),
 ]
