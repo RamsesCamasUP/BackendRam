@@ -121,7 +121,7 @@ DATABASES = {
         'NAME': 'webdb',
         'USER': 'webuserdb',
         'PASSWORD': 'Machiniram117.',
-        'HOST': '18.204.5.204',
+        'HOST': '172.31.52.118',
         'PORT': '5432'
     }
 }
