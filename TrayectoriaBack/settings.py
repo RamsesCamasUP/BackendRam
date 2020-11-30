@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG',default=False,cast=bool)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['18.204.5.204']
 
 
 # Application definition
@@ -116,9 +116,14 @@ WSGI_APPLICATION = 'TrayectoriaBack.wsgi.application'
 
 
 DATABASES = {
-    'default':dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'webdb',
+        'USER': 'webuserdb',
+        'PASSWORD': 'Machiniram117.',
+        'HOST': '172.31.52.118',
+        'PORT': '5432'
+    }
 }
 
 # Password validation
