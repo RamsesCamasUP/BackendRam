@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG',default=False,cast=bool)
 
-ALLOWED_HOSTS = ['18.204.5.204','*']
+ALLOWED_HOSTS = ['18.204.5.204']
 
 
 # Application definition
@@ -121,7 +121,7 @@ DATABASES = {
         'NAME': 'webdb',
         'USER': 'webuserdb',
         'PASSWORD': 'Machiniram117.',
-        'HOST': '172.31.52.118',
+        'HOST': '18.204.5.204',
         'PORT': '5432'
     }
 }
